@@ -1,0 +1,20 @@
+protocol_id,config_id,experiment_id,fold,auc,delta_vs_baseline,delta_in_cv_std,decision,next_step,best_iteration,elapsed_seconds,thread_count,features
+catboost_fe_single_fold_v1,4a9ca96b5619,BASE,1,0.963389,0.000000,0.000000,Reference,-,9145,800.205873,10,
+catboost_fe_single_fold_v1,4a9ca96b5619,FE01,1,0.963399,0.000009,0.019849,Reject,Stop,8358,731.240483,10,num_missing
+catboost_fe_single_fold_v1,4a9ca96b5619,FE02,1,0.963430,0.000041,0.086310,Reject,Stop,9263,871.997253,10,missing_flags
+catboost_fe_single_fold_v1,4a9ca96b5619,FE03,1,0.963329,-0.000060,-0.127860,Reject,Stop,8421,748.029170,10,weekend_screen_gap
+catboost_fe_single_fold_v1,4a9ca96b5619,FE04,1,0.963352,-0.000038,-0.079401,Reject,Stop,8517,749.259739,10,weekend_screen_ratio
+catboost_fe_single_fold_v1,4a9ca96b5619,FE05,1,0.963449,0.000060,0.125806,Reject,Stop,8915,790.882731,10,social_media_ratio
+catboost_fe_single_fold_v1,4a9ca96b5619,FE06,1,0.963389,-0.000000,-0.000607,Reject,Stop,8230,721.798996,10,gaming_ratio
+catboost_fe_single_fold_v1,4a9ca96b5619,FE07,1,0.963470,0.000081,0.171652,Reject,Stop,8426,712.182417,10,work_study_ratio
+catboost_fe_single_fold_v1,4a9ca96b5619,FE08,1,0.963373,-0.000017,-0.034967,Reject,Stop,8820,756.156584,10,leisure_screen_time
+catboost_fe_single_fold_v1,4a9ca96b5619,FE09,1,0.963758,0.000369,0.780105,Promote,Run Fold 2,8825,758.514313,10,known_activity_time
+catboost_fe_single_fold_v1,4a9ca96b5619,FE10,1,0.963985,0.000596,1.259243,Strong candidate,Run Fold 2,7506,648.012364,10,unknown_activity_time
+catboost_fe_single_fold_v1,4a9ca96b5619,FE11,1,0.963238,-0.000151,-0.318754,Reject,Stop,7923,680.606548,10,app_opens_per_screen_hour
+catboost_fe_single_fold_v1,4a9ca96b5619,FE12,1,0.963181,-0.000208,-0.440301,Reject,Stop,6547,568.389269,10,notifications_per_screen_hour
+catboost_fe_single_fold_v1,4a9ca96b5619,FE13,1,0.963306,-0.000083,-0.175263,Reject,Stop,7711,657.383759,10,notifications_per_app_open
+catboost_fe_single_fold_v1,4a9ca96b5619,FE14,1,0.963290,-0.000099,-0.208685,Reject,Stop,6944,599.696220,10,screen_per_awake_hour
+catboost_fe_single_fold_v1,4a9ca96b5619,FE15,1,0.963308,-0.000081,-0.171887,Reject,Stop,8109,696.793624,10,screen_sleep_ratio
+catboost_fe_single_fold_v1,4a9ca96b5619,FE16,1,0.963497,0.000108,0.228582,Reject,Stop,9045,776.354377,10,leisure_screen_ratio
+catboost_fe_single_fold_v1,4a9ca96b5619,FE17,1,0.963417,0.000028,0.059534,Reject,Stop,8420,724.411531,10,work_leisure_ratio
+catboost_fe_single_fold_v1,4a9ca96b5619,FE18,1,0.963214,-0.000175,-0.369485,Reject,Stop,8974,770.554665,10,offline_awake_hours
