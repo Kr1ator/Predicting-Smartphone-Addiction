@@ -1,0 +1,38 @@
+{
+  "protocol_id": "catboost_fe_single_fold_v1",
+  "config_id": "4a9ca96b5619",
+  "source": "src.experiment",
+  "model_params": {
+    "iterations": 10000,
+    "learning_rate": 0.05,
+    "depth": 6,
+    "loss_function": "Logloss",
+    "eval_metric": "AUC",
+    "random_seed": 42,
+    "verbose": 500,
+    "allow_writing_files": false,
+    "thread_count": 10
+  },
+  "cv_params": {
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 42
+  },
+  "cat_cols": [
+    "gender",
+    "stress_level",
+    "academic_work_impact"
+  ],
+  "experiment_id": "FE19",
+  "features": [
+    "known_activity_time",
+    "unknown_activity_time"
+  ],
+  "fold": 3,
+  "auc": 0.9647129394141553,
+  "baseline_auc": 0.9641567688148216,
+  "delta_vs_baseline": 0.0005561705993336608,
+  "best_iteration": 6967,
+  "elapsed_seconds": 637.8565797909978,
+  "thread_count": 10
+}

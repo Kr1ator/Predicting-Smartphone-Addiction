@@ -1,0 +1,4 @@
+protocol_id,config_id,experiment_id,mean_auc,mean_delta,positive_folds,delta_std,thread_count
+catboost_fe_single_fold_v1,4a9ca96b5619,FE09,0.964348,0.000341,5,0.000042,10
+catboost_fe_single_fold_v1,4a9ca96b5619,FE10,0.964629,0.000621,5,0.000076,10
+catboost_fe_single_fold_v1,4a9ca96b5619,FE19,0.964651,0.000643,5,0.000092,10

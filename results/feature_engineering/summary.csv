@@ -8,8 +8,8 @@ catboost_fe_single_fold_v1,4a9ca96b5619,FE05,1,0.963449,0.000060,0.125806,Reject
 catboost_fe_single_fold_v1,4a9ca96b5619,FE06,1,0.963389,-0.000000,-0.000607,Reject,Stop,8230,721.798996,10,gaming_ratio
 catboost_fe_single_fold_v1,4a9ca96b5619,FE07,1,0.963470,0.000081,0.171652,Reject,Stop,8426,712.182417,10,work_study_ratio
 catboost_fe_single_fold_v1,4a9ca96b5619,FE08,1,0.963373,-0.000017,-0.034967,Reject,Stop,8820,756.156584,10,leisure_screen_time
-catboost_fe_single_fold_v1,4a9ca96b5619,FE09,1,0.963758,0.000369,0.780105,Promote,Run Fold 2,8825,758.514313,10,known_activity_time
-catboost_fe_single_fold_v1,4a9ca96b5619,FE10,1,0.963985,0.000596,1.259243,Strong candidate,Run Fold 2,7506,648.012364,10,unknown_activity_time
+catboost_fe_single_fold_v1,4a9ca96b5619,FE09,1,0.963758,0.000369,0.780105,Promote,Run full 5-Fold,8825,758.514313,10,known_activity_time
+catboost_fe_single_fold_v1,4a9ca96b5619,FE10,1,0.963985,0.000596,1.259243,Strong candidate,Run full 5-Fold,7506,648.012364,10,unknown_activity_time
 catboost_fe_single_fold_v1,4a9ca96b5619,FE11,1,0.963238,-0.000151,-0.318754,Reject,Stop,7923,680.606548,10,app_opens_per_screen_hour
 catboost_fe_single_fold_v1,4a9ca96b5619,FE12,1,0.963181,-0.000208,-0.440301,Reject,Stop,6547,568.389269,10,notifications_per_screen_hour
 catboost_fe_single_fold_v1,4a9ca96b5619,FE13,1,0.963306,-0.000083,-0.175263,Reject,Stop,7711,657.383759,10,notifications_per_app_open
@@ -18,3 +18,20 @@ catboost_fe_single_fold_v1,4a9ca96b5619,FE15,1,0.963308,-0.000081,-0.171887,Reje
 catboost_fe_single_fold_v1,4a9ca96b5619,FE16,1,0.963497,0.000108,0.228582,Reject,Stop,9045,776.354377,10,leisure_screen_ratio
 catboost_fe_single_fold_v1,4a9ca96b5619,FE17,1,0.963417,0.000028,0.059534,Reject,Stop,8420,724.411531,10,work_leisure_ratio
 catboost_fe_single_fold_v1,4a9ca96b5619,FE18,1,0.963214,-0.000175,-0.369485,Reject,Stop,8974,770.554665,10,offline_awake_hours
+catboost_fe_single_fold_v1,4a9ca96b5619,FE19,1,0.963972,0.000583,1.233037,Strong candidate,Run full 5-Fold,7421,644.050763,10,known_activity_time + unknown_activity_time
+catboost_fe_single_fold_v1,4a9ca96b5619,BASE,2,0.963901,0.000000,0.000000,Reference,-,8625,731.321150,10,
+catboost_fe_single_fold_v1,4a9ca96b5619,FE09,2,0.964196,0.000295,0.624419,Confirmed,Run full 5-Fold,8949,765.306127,10,known_activity_time
+catboost_fe_single_fold_v1,4a9ca96b5619,FE10,2,0.964452,0.000551,1.164592,Confirmed,Run full 5-Fold,7274,622.214218,10,unknown_activity_time
+catboost_fe_single_fold_v1,4a9ca96b5619,FE19,2,0.964601,0.000700,1.479393,Confirmed,Run full 5-Fold,8443,751.160948,10,known_activity_time + unknown_activity_time
+catboost_fe_single_fold_v1,4a9ca96b5619,BASE,3,0.964157,0.000000,0.000000,Reference,-,7514,634.080124,10,
+catboost_fe_single_fold_v1,4a9ca96b5619,FE09,3,0.964461,0.000304,0.643001,5-Fold evidence,Review all folds,7562,655.423285,10,known_activity_time
+catboost_fe_single_fold_v1,4a9ca96b5619,FE10,3,0.964737,0.000580,1.226538,5-Fold evidence,Review all folds,7399,636.232042,10,unknown_activity_time
+catboost_fe_single_fold_v1,4a9ca96b5619,FE19,3,0.964713,0.000556,1.175836,5-Fold evidence,Review all folds,6967,637.856580,10,known_activity_time + unknown_activity_time
+catboost_fe_single_fold_v1,4a9ca96b5619,BASE,4,0.964813,0.000000,0.000000,Reference,-,7780,675.238739,10,
+catboost_fe_single_fold_v1,4a9ca96b5619,FE09,4,0.965209,0.000395,0.836148,5-Fold evidence,Review all folds,7952,693.281997,10,known_activity_time
+catboost_fe_single_fold_v1,4a9ca96b5619,FE10,4,0.965558,0.000745,1.575117,5-Fold evidence,Review all folds,7438,650.315240,10,unknown_activity_time
+catboost_fe_single_fold_v1,4a9ca96b5619,FE19,4,0.965590,0.000777,1.641738,5-Fold evidence,Review all folds,7850,701.489520,10,known_activity_time + unknown_activity_time
+catboost_fe_single_fold_v1,4a9ca96b5619,BASE,5,0.963776,0.000000,0.000000,Reference,-,8050,722.696779,10,
+catboost_fe_single_fold_v1,4a9ca96b5619,FE09,5,0.964117,0.000341,0.720775,5-Fold evidence,Review all folds,8651,766.225983,10,known_activity_time
+catboost_fe_single_fold_v1,4a9ca96b5619,FE10,5,0.964412,0.000636,1.343638,5-Fold evidence,Review all folds,8190,744.512513,10,unknown_activity_time
+catboost_fe_single_fold_v1,4a9ca96b5619,FE19,5,0.964377,0.000601,1.269775,5-Fold evidence,Review all folds,7612,663.209823,10,known_activity_time + unknown_activity_time
