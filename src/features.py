@@ -165,6 +165,7 @@ FEATURE_SETS = {
     "FE16": ("leisure_screen_ratio",),
     "FE17": ("work_leisure_ratio",),
     "FE18": ("offline_awake_hours",),
+    "FE19": ("known_activity_time", "unknown_activity_time"),
 }
 
 
