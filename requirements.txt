@@ -1,6 +1,10 @@
-pandas
-numpy
-scikit-learn
-matplotlib
-jupyter
-catboost
+# Core data and modelling dependencies
+numpy==2.5.1
+pandas==3.0.3
+scikit-learn==1.9.0
+catboost==1.2.10
+
+# Visualisation and notebook runtime
+matplotlib==3.11.0
+ipykernel==7.2.0
+jupyterlab==4.5.9
