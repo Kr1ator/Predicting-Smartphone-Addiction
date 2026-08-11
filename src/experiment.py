@@ -18,6 +18,7 @@ DATA_DIR = PROJECT_ROOT / "data"
 RESULTS_DIR = PROJECT_ROOT / "results" / "feature_engineering"
 
 PROTOCOL_ID = "catboost_fe_single_fold_v1"
+THREAD_COUNT = 10
 
 CAT_COLS = [
     "gender",
@@ -56,7 +57,7 @@ def build_config_id():
 CONFIG_ID = build_config_id()
 
 
-def load_baseline_auc(results_dir, fold, thread_count):
+def load_baseline_auc(results_dir, fold):
     baseline_path = results_dir / f"base_fold{fold}.json"
 
     if not baseline_path.exists():
@@ -76,7 +77,7 @@ def load_baseline_auc(results_dir, fold, thread_count):
         )
     if baseline["fold"] != fold:
         raise ValueError("The baseline fold does not match.")
-    if baseline["thread_count"] != thread_count:
+    if baseline["thread_count"] != THREAD_COUNT:
         raise ValueError("The baseline thread count does not match.")
 
     return float(baseline["auc"])
@@ -85,7 +86,6 @@ def load_baseline_auc(results_dir, fold, thread_count):
 def run_experiment(
     experiment_id,
     fold=1,
-    thread_count=8,
     data_dir=DATA_DIR,
     results_dir=RESULTS_DIR,
 ):
@@ -95,16 +95,12 @@ def run_experiment(
         raise ValueError(f"Unknown experiment: {experiment_id}")
     if fold not in range(1, 6):
         raise ValueError("fold must be between 1 and 5")
-    if thread_count < 1:
-        raise ValueError("thread_count must be at least 1")
-
     baseline_auc = None
 
     if experiment_id != "BASE":
         baseline_auc = load_baseline_auc(
             results_dir,
             fold,
-            thread_count,
         )
 
     # Load and prepare the training data.
@@ -140,7 +136,7 @@ def run_experiment(
     # Train the model.
     model = CatBoostClassifier(
         **MODEL_PARAMS,
-        thread_count=thread_count,
+        thread_count=THREAD_COUNT,
     )
 
     started_at = perf_counter()
@@ -167,7 +163,7 @@ def run_experiment(
 
     # Build the result record.
     saved_model_params = MODEL_PARAMS.copy()
-    saved_model_params["thread_count"] = thread_count
+    saved_model_params["thread_count"] = THREAD_COUNT
 
     result = {
         "protocol_id": PROTOCOL_ID,
@@ -184,7 +180,7 @@ def run_experiment(
         "delta_vs_baseline": delta_vs_baseline,
         "best_iteration": best_iteration,
         "elapsed_seconds": elapsed_seconds,
-        "thread_count": thread_count,
+        "thread_count": THREAD_COUNT,
     }
 
     # Save the result as JSON.
@@ -211,7 +207,6 @@ def parse_args():
         choices=FEATURE_SETS,
     )
     parser.add_argument("--fold", type=int, choices=range(1, 6), default=1)
-    parser.add_argument("--thread-count", type=int, default=8)
     parser.add_argument("--data-dir", type=Path, default=DATA_DIR)
     parser.add_argument("--results-dir", type=Path, default=RESULTS_DIR)
     return parser.parse_args()
@@ -224,7 +219,6 @@ def main():
         run_experiment(
             experiment_id,
             fold=args.fold,
-            thread_count=args.thread_count,
             data_dir=args.data_dir,
             results_dir=args.results_dir,
         )
