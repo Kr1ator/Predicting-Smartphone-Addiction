@@ -6,7 +6,6 @@ from .features import (
     make_experiment_features,
 )
 
-
 DAILY_SCREEN = "daily_screen_time_hours"
 SOCIAL = "social_media_hours"
 GAMING = "gaming_hours"
@@ -154,7 +153,7 @@ ROUND2_FEATURE_BUILDERS = {
 }
 
 
-# Each entry below is one official first-stage experiment.
+# First-stage experiments and the three R_GROUP leave-one-out experiments.
 ROUND2_FEATURE_SETS = {
     "FE27": ("FE27",),
     "R_GROUP": ("FE20", "FE22", "FE25"),
@@ -162,7 +161,17 @@ ROUND2_FEATURE_SETS = {
     "CAT_NUM_GROUP": ("FE30", "FE31", "FE34", "FE39", "FE40"),
     "CAT2_GROUP": ("FE43", "FE44", "FE45"),
     "O_GROUP": ("FE28", "FE29"),
+    "R_MINUS_FE20": ("FE22", "FE25"),
+    "R_MINUS_FE22": ("FE20", "FE25"),
+    "R_MINUS_FE25": ("FE20", "FE22"),
 }
+
+
+R_GROUP_LOO_EXPERIMENTS = (
+    "R_MINUS_FE20",
+    "R_MINUS_FE22",
+    "R_MINUS_FE25",
+)
 
 
 ROUND2_CAT_COLS = {

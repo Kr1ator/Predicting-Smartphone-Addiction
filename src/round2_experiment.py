@@ -1,10 +1,11 @@
-"""Run Round 2 first-stage experiments.
+"""Run Round 2 feature experiments.
 
 Reference: FE10, matched by fold
 CV/model parameters: shared with src.experiment
 Thread count: 10
 Early stopping: 200 rounds
 Comparison: paired AUC delta against FE10
+R_GROUP LOO: also compared with the complete R_GROUP on the same fold
 """
 
 import argparse
@@ -28,13 +29,16 @@ from .experiment import (
 )
 from .round2_features import (
     ROUND2_FEATURE_SETS,
+    R_GROUP_LOO_EXPERIMENTS,
     get_round2_cat_cols,
     make_round2_features,
 )
 
 DATA_DIR = PROJECT_ROOT / "data"
 REFERENCE_RESULTS_DIR = PROJECT_ROOT / "results" / "feature_engineering"
-RESULTS_DIR = PROJECT_ROOT / "results" / "round2" / "first_stage"
+ROUND2_RESULTS_DIR = PROJECT_ROOT / "results" / "round2"
+FIRST_STAGE_RESULTS_DIR = ROUND2_RESULTS_DIR / "first_stage"
+R_GROUP_LOO_RESULTS_DIR = ROUND2_RESULTS_DIR / "r_group_loo"
 
 REFERENCE_EXPERIMENT = "FE10"
 EARLY_STOPPING_ROUNDS = 200
@@ -64,6 +68,36 @@ def load_reference_result(reference_results_dir, fold):
     return reference
 
 
+def load_r_group_result(fold, reference_auc):
+    result_path = FIRST_STAGE_RESULTS_DIR / f"r_group_fold{fold}.json"
+
+    if not result_path.exists():
+        raise FileNotFoundError(
+            f"Missing R_GROUP result for Fold {fold}: {result_path}"
+        )
+
+    result = json.loads(result_path.read_text(encoding="utf-8"))
+
+    if result["experiment_id"] != "R_GROUP":
+        raise ValueError("The comparison experiment ID is not R_GROUP.")
+    if result["feature_ids"] != ["FE20", "FE22", "FE25"]:
+        raise ValueError("The R_GROUP feature definition does not match.")
+    if result["fold"] != fold:
+        raise ValueError("The R_GROUP fold does not match.")
+    if float(result["reference_auc"]) != reference_auc:
+        raise ValueError(
+            "R_GROUP and the LOO experiment do not share the same FE10 reference."
+        )
+
+    return result
+
+
+def get_results_dir(experiment_id):
+    if experiment_id in R_GROUP_LOO_EXPERIMENTS:
+        return R_GROUP_LOO_RESULTS_DIR
+    return FIRST_STAGE_RESULTS_DIR
+
+
 def format_elapsed_time(seconds):
     total_seconds = round(seconds)
     minutes, seconds = divmod(total_seconds, 60)
@@ -75,7 +109,7 @@ def run_experiment(
     fold=1,
     data_dir=DATA_DIR,
     reference_results_dir=REFERENCE_RESULTS_DIR,
-    results_dir=RESULTS_DIR,
+    results_dir=None,
 ):
     experiment_id = experiment_id.upper()
 
@@ -88,6 +122,14 @@ def run_experiment(
         reference_results_dir,
         fold,
     )
+    reference_auc = float(reference["auc"])
+
+    comparison = None
+    if experiment_id in R_GROUP_LOO_EXPERIMENTS:
+        comparison = load_r_group_result(fold, reference_auc)
+
+    if results_dir is None:
+        results_dir = get_results_dir(experiment_id)
 
     # Load and prepare the training data.
     train_path = data_dir / "train.csv"
@@ -144,7 +186,6 @@ def run_experiment(
     valid_pred = model.predict_proba(X_valid)[:, 1]
     valid_auc = float(roc_auc_score(y_valid, valid_pred))
     best_iteration = model.get_best_iteration() + 1
-    reference_auc = float(reference["auc"])
 
     # Save only the information that changes by experiment or fold.
     result = {
@@ -158,6 +199,12 @@ def run_experiment(
         "best_iteration": best_iteration,
         "elapsed": format_elapsed_time(elapsed_seconds),
     }
+
+    if comparison is not None:
+        comparison_auc = float(comparison["auc"])
+        result["comparison_experiment"] = "R_GROUP"
+        result["comparison_auc"] = comparison_auc
+        result["delta_vs_comparison"] = valid_auc - comparison_auc
 
     # Save the result as JSON.
     results_dir.mkdir(parents=True, exist_ok=True)
@@ -194,7 +241,11 @@ def parse_args():
         type=Path,
         default=REFERENCE_RESULTS_DIR,
     )
-    parser.add_argument("--results-dir", type=Path, default=RESULTS_DIR)
+    parser.add_argument(
+        "--results-dir",
+        type=Path,
+        help="Optional output override. By default, LOO results use their own folder.",
+    )
     return parser.parse_args()
 
 
