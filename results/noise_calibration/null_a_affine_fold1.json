@@ -1,0 +1,9 @@
+{
+  "experiment_id": "NULL_A_AFFINE",
+  "fold": 1,
+  "reference_auc": 0.9639848192413013,
+  "auc": 0.9639996684341624,
+  "delta_vs_reference": 1.4849192861099425e-05,
+  "best_iteration": 7946,
+  "elapsed": "10m 55s"
+}

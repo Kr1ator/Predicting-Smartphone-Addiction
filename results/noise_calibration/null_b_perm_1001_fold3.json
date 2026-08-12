@@ -1,0 +1,9 @@
+{
+  "experiment_id": "NULL_B_PERM_1001",
+  "fold": 3,
+  "reference_auc": 0.9647369214974622,
+  "auc": 0.9645605125483868,
+  "delta_vs_reference": -0.0001764089490753351,
+  "best_iteration": 8022,
+  "elapsed": "11m 31s"
+}
