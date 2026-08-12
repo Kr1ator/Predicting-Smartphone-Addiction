@@ -1,0 +1,21 @@
+{
+  "experiment_id": "R_MINUS_FE20",
+  "feature_ids": [
+    "FE22",
+    "FE25"
+  ],
+  "features": [
+    "unknown_activity_time",
+    "screen_minus_work_study",
+    "screen_minus_gaming_work_study"
+  ],
+  "fold": 3,
+  "reference_auc": 0.9647369214974622,
+  "auc": 0.964788866778199,
+  "delta_vs_reference": 5.1945280736820365e-05,
+  "best_iteration": 7644,
+  "elapsed": "10m 30s",
+  "comparison_experiment": "R_GROUP",
+  "comparison_auc": 0.9647744407896179,
+  "delta_vs_comparison": 1.4425988581034943e-05
+}
