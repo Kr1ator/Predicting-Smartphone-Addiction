@@ -20,17 +20,21 @@ from sklearn.model_selection import StratifiedKFold
 
 from .experiment import (
     CAT_COLS,
-    CONFIG_ID as REFERENCE_CONFIG_ID,
     CV_PARAMS,
     MODEL_PARAMS,
     PROJECT_ROOT,
-    PROTOCOL_ID as REFERENCE_PROTOCOL_ID,
     THREAD_COUNT,
 )
+from .experiment import (
+    CONFIG_ID as REFERENCE_CONFIG_ID,
+)
+from .experiment import (
+    PROTOCOL_ID as REFERENCE_PROTOCOL_ID,
+)
 from .round2_features import (
-    ROUND2_FEATURE_SETS,
     R_GROUP_LOO_EXPERIMENTS,
     R_GROUP_SINGLE_EXPERIMENTS,
+    ROUND2_FEATURE_SETS,
     get_round2_cat_cols,
     make_round2_features,
 )
