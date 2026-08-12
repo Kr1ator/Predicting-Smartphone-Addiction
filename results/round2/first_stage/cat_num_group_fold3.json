@@ -1,0 +1,42 @@
+{
+  "experiment_id": "CAT_NUM_GROUP",
+  "feature_ids": [
+    "FE30",
+    "FE31",
+    "FE34",
+    "FE39",
+    "FE40"
+  ],
+  "features": [
+    "unknown_activity_time",
+    "gaming_by_gender__Female",
+    "gaming_by_gender__Male",
+    "gaming_by_gender__Missing",
+    "gaming_by_gender__Other",
+    "gaming_hours_missing",
+    "social_by_gender__Female",
+    "social_by_gender__Male",
+    "social_by_gender__Missing",
+    "social_by_gender__Other",
+    "social_media_hours_missing",
+    "sleep_by_stress__High",
+    "sleep_by_stress__Low",
+    "sleep_by_stress__Medium",
+    "sleep_by_stress__Missing",
+    "sleep_hours_missing",
+    "work_by_impact__Missing",
+    "work_by_impact__No",
+    "work_by_impact__Yes",
+    "work_study_hours_missing",
+    "screen_by_impact__Missing",
+    "screen_by_impact__No",
+    "screen_by_impact__Yes",
+    "daily_screen_time_hours_missing"
+  ],
+  "fold": 3,
+  "reference_auc": 0.9647369214974622,
+  "auc": 0.9645413706737431,
+  "delta_vs_reference": -0.0001955508237190262,
+  "best_iteration": 8675,
+  "elapsed": "17m 48s"
+}

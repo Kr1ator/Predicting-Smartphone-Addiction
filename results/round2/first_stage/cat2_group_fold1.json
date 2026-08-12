@@ -1,0 +1,20 @@
+{
+  "experiment_id": "CAT2_GROUP",
+  "feature_ids": [
+    "FE43",
+    "FE44",
+    "FE45"
+  ],
+  "features": [
+    "unknown_activity_time",
+    "gender_stress_combo",
+    "gender_impact_combo",
+    "stress_impact_combo"
+  ],
+  "fold": 1,
+  "reference_auc": 0.9639848192413013,
+  "auc": 0.9639414146694815,
+  "delta_vs_reference": -0.00004340457181983837,
+  "best_iteration": 8705,
+  "elapsed": "22m 9s"
+}

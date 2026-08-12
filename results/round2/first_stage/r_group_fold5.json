@@ -1,0 +1,20 @@
+{
+  "experiment_id": "R_GROUP",
+  "feature_ids": [
+    "FE20",
+    "FE22",
+    "FE25"
+  ],
+  "features": [
+    "unknown_activity_time",
+    "screen_minus_social",
+    "screen_minus_work_study",
+    "screen_minus_gaming_work_study"
+  ],
+  "fold": 5,
+  "reference_auc": 0.9644118915032427,
+  "auc": 0.9644970556360668,
+  "delta_vs_reference": 0.0000851641328241115,
+  "best_iteration": 7151,
+  "elapsed": "13m 32s"
+}

@@ -1,0 +1,18 @@
+{
+  "experiment_id": "O_GROUP",
+  "feature_ids": [
+    "FE28",
+    "FE29"
+  ],
+  "features": [
+    "unknown_activity_time",
+    "work_study_ratio",
+    "leisure_screen_ratio"
+  ],
+  "fold": 1,
+  "reference_auc": 0.9639848192413013,
+  "auc": 0.9640189280346969,
+  "delta_vs_reference": 0.00003410879339560413,
+  "best_iteration": 8158,
+  "elapsed": "15m 40s"
+}

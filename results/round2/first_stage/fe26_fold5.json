@@ -1,0 +1,16 @@
+{
+  "experiment_id": "FE26",
+  "feature_ids": [
+    "FE26"
+  ],
+  "features": [
+    "unknown_activity_time",
+    "leisure_minus_work_study"
+  ],
+  "fold": 5,
+  "reference_auc": 0.9644118915032427,
+  "auc": 0.9643732110496357,
+  "delta_vs_reference": -0.000038680453606998455,
+  "best_iteration": 7693,
+  "elapsed": "14m 21s"
+}

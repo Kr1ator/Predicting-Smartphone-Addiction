@@ -1,0 +1,16 @@
+{
+  "experiment_id": "FE27",
+  "feature_ids": [
+    "FE27"
+  ],
+  "features": [
+    "unknown_activity_time",
+    "mean_daily_weekend_screen"
+  ],
+  "fold": 2,
+  "reference_auc": 0.9644516008761805,
+  "auc": 0.9644425248189235,
+  "delta_vs_reference": -0.000009076057257084713,
+  "best_iteration": 7906,
+  "elapsed": "14m 15s"
+}
