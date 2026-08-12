@@ -1,0 +1,16 @@
+{
+  "experiment_id": "FE25",
+  "feature_ids": [
+    "FE25"
+  ],
+  "features": [
+    "unknown_activity_time",
+    "screen_minus_gaming_work_study"
+  ],
+  "fold": 4,
+  "reference_auc": 0.9655582638303714,
+  "auc": 0.9656128028865006,
+  "delta_vs_reference": 5.4539056129288e-05,
+  "best_iteration": 7631,
+  "elapsed": "15m 16s"
+}
