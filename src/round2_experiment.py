@@ -30,6 +30,7 @@ from .experiment import (
 from .round2_features import (
     ROUND2_FEATURE_SETS,
     R_GROUP_LOO_EXPERIMENTS,
+    R_GROUP_SINGLE_EXPERIMENTS,
     get_round2_cat_cols,
     make_round2_features,
 )
@@ -39,6 +40,7 @@ REFERENCE_RESULTS_DIR = PROJECT_ROOT / "results" / "feature_engineering"
 ROUND2_RESULTS_DIR = PROJECT_ROOT / "results" / "round2"
 FIRST_STAGE_RESULTS_DIR = ROUND2_RESULTS_DIR / "first_stage"
 R_GROUP_LOO_RESULTS_DIR = ROUND2_RESULTS_DIR / "r_group_loo"
+R_GROUP_SINGLE_RESULTS_DIR = ROUND2_RESULTS_DIR / "r_group_single"
 
 REFERENCE_EXPERIMENT = "FE10"
 EARLY_STOPPING_ROUNDS = 200
@@ -95,6 +97,8 @@ def load_r_group_result(fold, reference_auc):
 def get_results_dir(experiment_id):
     if experiment_id in R_GROUP_LOO_EXPERIMENTS:
         return R_GROUP_LOO_RESULTS_DIR
+    if experiment_id in R_GROUP_SINGLE_EXPERIMENTS:
+        return R_GROUP_SINGLE_RESULTS_DIR
     return FIRST_STAGE_RESULTS_DIR
 
 
@@ -244,7 +248,7 @@ def parse_args():
     parser.add_argument(
         "--results-dir",
         type=Path,
-        help="Optional output override. By default, LOO results use their own folder.",
+        help="Optional output override. Follow-up experiments use separate folders.",
     )
     return parser.parse_args()
 

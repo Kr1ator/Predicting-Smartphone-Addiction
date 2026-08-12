@@ -153,7 +153,7 @@ ROUND2_FEATURE_BUILDERS = {
 }
 
 
-# First-stage experiments and the three R_GROUP leave-one-out experiments.
+# First-stage, R_GROUP leave-one-out, and residual single-feature experiments.
 ROUND2_FEATURE_SETS = {
     "FE27": ("FE27",),
     "R_GROUP": ("FE20", "FE22", "FE25"),
@@ -164,6 +164,8 @@ ROUND2_FEATURE_SETS = {
     "R_MINUS_FE20": ("FE22", "FE25"),
     "R_MINUS_FE22": ("FE20", "FE25"),
     "R_MINUS_FE25": ("FE20", "FE22"),
+    "FE22": ("FE22",),
+    "FE25": ("FE25",),
 }
 
 
@@ -171,6 +173,12 @@ R_GROUP_LOO_EXPERIMENTS = (
     "R_MINUS_FE20",
     "R_MINUS_FE22",
     "R_MINUS_FE25",
+)
+
+
+R_GROUP_SINGLE_EXPERIMENTS = (
+    "FE22",
+    "FE25",
 )
 
 
