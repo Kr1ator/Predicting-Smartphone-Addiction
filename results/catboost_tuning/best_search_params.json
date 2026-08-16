@@ -1,0 +1,13 @@
+{
+  "trial_number": 14,
+  "source": "optuna",
+  "mean_auc": 0.9644151326174358,
+  "mean_delta": 0.0001218526400133535,
+  "params": {
+    "depth": 5,
+    "learning_rate": 0.06920305838326056,
+    "l2_leaf_reg": 11.349110725951114,
+    "random_strength": 2.655659862113316,
+    "subsample": 0.7390533721986331
+  }
+}

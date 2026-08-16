@@ -1,0 +1,15 @@
+{
+  "trial_number": 13,
+  "source": "validation",
+  "mean_auc": 0.9647769368332497,
+  "mean_delta": 7.341755846108633e-05,
+  "params": {
+    "depth": 5,
+    "learning_rate": 0.06918255236598936,
+    "l2_leaf_reg": 10.296349080870566,
+    "random_strength": 2.175033956900669,
+    "subsample": 0.6340144604952528
+  },
+  "validation_mean_delta": 5.016296621518368e-05,
+  "validation_positive_folds": 3
+}

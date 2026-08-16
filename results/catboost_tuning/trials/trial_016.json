@@ -1,0 +1,31 @@
+{
+  "trial_number": 16,
+  "params": {
+    "depth": 6,
+    "learning_rate": 0.059626957521054284,
+    "l2_leaf_reg": 14.650753612267673,
+    "random_strength": 4.918515333938468,
+    "subsample": 0.8752918047800797
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "auc": 0.9640993728760824,
+      "reference_auc": 0.9640185992141054,
+      "delta_vs_reference": 8.07736619770072e-05,
+      "best_iteration": 8305,
+      "elapsed_seconds": 689.9
+    },
+    {
+      "fold": 2,
+      "auc": 0.9645770492302566,
+      "reference_auc": 0.9645679607407396,
+      "delta_vs_reference": 9.088489516972942e-06,
+      "best_iteration": 9261,
+      "elapsed_seconds": 724.4
+    }
+  ],
+  "mean_auc": 0.9643382110531695,
+  "mean_delta": 4.493107574699007e-05,
+  "positive_folds": 2
+}

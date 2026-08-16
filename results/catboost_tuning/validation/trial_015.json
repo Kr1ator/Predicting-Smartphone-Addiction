@@ -1,0 +1,58 @@
+{
+  "trial_number": 15,
+  "params": {
+    "depth": 5,
+    "learning_rate": 0.0676198688919951,
+    "l2_leaf_reg": 3.2088994942798257,
+    "random_strength": 2.748027075767293,
+    "subsample": 0.7826173426603852
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "auc": 0.964042319966232,
+      "reference_auc": 0.9640185992141054,
+      "delta_vs_reference": 2.3720752126643596e-05,
+      "best_iteration": 8007,
+      "elapsed_seconds": 571.4
+    },
+    {
+      "fold": 2,
+      "auc": 0.9647099275088745,
+      "reference_auc": 0.9645679607407396,
+      "delta_vs_reference": 0.00014196676813493792,
+      "best_iteration": 9395,
+      "elapsed_seconds": 668.7
+    },
+    {
+      "fold": 3,
+      "auc": 0.9648353225818361,
+      "reference_auc": 0.9648033277800838,
+      "delta_vs_reference": 3.199480175231084e-05,
+      "best_iteration": 7560,
+      "elapsed_seconds": 536.7
+    },
+    {
+      "fold": 4,
+      "auc": 0.9656808141992638,
+      "reference_auc": 0.9656128028865006,
+      "delta_vs_reference": 6.801131276312766e-05,
+      "best_iteration": 9919,
+      "elapsed_seconds": 675.1
+    },
+    {
+      "fold": 5,
+      "auc": 0.9644825807857645,
+      "reference_auc": 0.964514905752514,
+      "delta_vs_reference": -3.232496674943075e-05,
+      "best_iteration": 7952,
+      "elapsed_seconds": 552.3
+    }
+  ],
+  "mean_auc": 0.9647501930083943,
+  "mean_delta": 4.667373360551785e-05,
+  "positive_folds": 4,
+  "validation_mean_auc": 0.9649995725222881,
+  "validation_mean_delta": 2.2560382588669253e-05,
+  "validation_positive_folds": 2
+}

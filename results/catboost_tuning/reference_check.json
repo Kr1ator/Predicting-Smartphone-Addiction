@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "tolerance": 1e-06,
+  "params": {
+    "depth": 6,
+    "learning_rate": 0.05,
+    "l2_leaf_reg": 3.0,
+    "random_strength": 1.0,
+    "subsample": 0.8
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "auc": 0.9640185992141054,
+      "reference_auc": 0.9640185992141054,
+      "delta_vs_reference": 0.0,
+      "best_iteration": 7396,
+      "elapsed_seconds": 664.4
+    },
+    {
+      "fold": 2,
+      "auc": 0.9645679607407396,
+      "reference_auc": 0.9645679607407396,
+      "delta_vs_reference": 0.0,
+      "best_iteration": 8853,
+      "elapsed_seconds": 767.8
+    }
+  ],
+  "mean_auc": 0.9642932799774224,
+  "mean_delta": 0.0,
+  "positive_folds": 0
+}
